@@ -6,14 +6,14 @@ const DataOverview = () => {
 
   // Fetch Data from Backend
   useEffect(() => {
-    fetch('https://employee-salary-prediction-2.onrender.com/data')
+    fetch('https://employee-salary-prediction-1.onrender.com/data')
       .then(response => response.json())
       .then(data => {
         const parsedData = JSON.parse(data);
         setData(parsedData);
       });
 
-    fetch('https://employee-salary-prediction-2.onrender.com/data_summary')
+    fetch('https://employee-salary-prediction-1.onrender.com/data_summary')
       .then(response => response.json())
       .then(summary => setNumericalStats(summary));
   }, []);
