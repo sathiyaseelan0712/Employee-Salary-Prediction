@@ -19,11 +19,6 @@ const App = () => {
           isCollapsed={isSidebarCollapsed}
           onToggle={handleSidebarToggle}
         />
-        <div
-          className={`flex-1 transition-all duration-300 ${
-            isSidebarCollapsed ? 'ml-16' : 'ml-64'
-          } lg:ml-64 xl:ml-64 sm:ml-48`}
-        >
           <div className="p-6">
             <Routes>
               <Route path="/" element={<DataOverview />} />
@@ -33,7 +28,6 @@ const App = () => {
             </Routes>
           </div>
         </div>
-      </div>
     </Router>
   );
 };
