@@ -79,7 +79,7 @@ def get_heatmap_data():
     )
     return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-@app.route("/api/scatter-matrix", methods=["GET"])
+@app.route("/scatter-matrix", methods=["GET"])
 def get_scatter_matrix_data():
     fig = px.scatter_matrix(
         df,
@@ -92,7 +92,7 @@ def get_scatter_matrix_data():
     return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
 # Scatter plot for specific relation between two features
-@app.route("/api/relation-scatter", methods=["GET"])
+@app.route("/relation-scatter", methods=["GET"])
 def get_relation_scatter():
     x = request.args.get('x')
     y = request.args.get('y')
