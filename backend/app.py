@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import pandas as pd
-import os
+import joblib
 import pickle
 import json
 import numpy as np
@@ -11,12 +11,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Define the path to the model file
-model_path = os.path.join(os.path.dirname(__file__), "random_forest_regressor_salary_predictor_1.pkl")
-
-# Load the pre-trained model
-with open(model_path, "rb") as model_file:
-    model = pickle.load(model_file)
+# Load the trained model and preprocessor
+model = joblib.load('random_forest_regressor_salary_predictor_1.pkl')
 
 # Feature columns expected by the model
 expected_features = ['Age', 'Years of Experience', 'Education Level_Master\'s', 'Education Level_PhD', 'Gender_Male']
