@@ -59,8 +59,8 @@ const SalaryPrediction = () => {
             onChange={(e) => setEducation(e.target.value)}
             className="border p-2 w-full"
           >
-            <option value="Bachelor's">Bachelor's</option>
-            <option value="Master's">Master's</option>
+            <option value="Bachelor's">Bachelor</option>
+            <option value="Master's">Master</option>
             <option value="PhD">PhD</option>
           </select>
         </div>
@@ -86,7 +86,7 @@ const SalaryPrediction = () => {
       </button>
 
       {predictedSalary && (
-        <div className="mt-4">
+        <div className="mt-4 ">
           <h3 className="text-2xl font-extrabold text-white font-mono">
             Predicted Salary: ₹{predictedSalary}
           </h3>

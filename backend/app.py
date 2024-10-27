@@ -16,6 +16,8 @@ model = pickle.load(open("random_forest_regressor_salary_predictor_1.pkl", "rb")
 # Feature columns expected by the model
 expected_features = ['Age', 'Years of Experience', 'Education Level_Master\'s', 'Education Level_PhD', 'Gender_Male']
 df1 = pd.read_csv('Salary Data.csv')
+
+#------------------------------------------------------------------------------------------------
 # Load CSV data (for visualizations)
 df = pd.read_csv('Salary Data.csv')
 
@@ -80,7 +82,7 @@ def get_heatmap_data():
 def get_scatter_matrix_data():
     fig = px.scatter_matrix(
         df,
-        dimensions=df.select_dtypes(include="number").columns,  # Include one-hot encoded columns
+        dimensions=df.select_dtypes(include="number").columns,  
         height=800,
         opacity=0.65,
         title="Relationships Between Numerical Data",
