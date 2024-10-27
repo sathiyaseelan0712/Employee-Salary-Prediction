@@ -12,14 +12,14 @@ const RelationsAndCorrelations = () => {
 
   // Fetch Heatmap Data
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/heatmap').then(response => {
+    axios.get('https://employee-salary-prediction-2.onrender.com/api/heatmap').then(response => {
       setHeatmapData(response.data);
     });
   }, []);
 
   // Fetch Scatter Matrix Data
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/scatter-matrix').then(response => {
+    axios.get('https://employee-salary-prediction-2.onrender.com/api/scatter-matrix').then(response => {
       setScatterMatrixData(response.data);
     });
   }, []);
@@ -35,7 +35,7 @@ const RelationsAndCorrelations = () => {
   // Fetch Relation Scatter Data
   useEffect(() => {
     if (firstFeature && secondFeature) {
-      axios.get(`http://127.0.0.1:5000/api/relation-scatter?x=${firstFeature}&y=${secondFeature}`).then(response => {
+      axios.get(`https://employee-salary-prediction-2.onrender.com/api/relation-scatter?x=${firstFeature}&y=${secondFeature}`).then(response => {
         setRelationScatterData(response.data);
       });
     }
